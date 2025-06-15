@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Predator Framework - Secure AI Command Execution</title>
+    
+    <!-- Open Graph Meta Tags for Perfect Social Previews -->
+    <meta property="og:title" content="Apex Predator Framework - Revolutionary AI Security Architecture">
+    <meta property="og:description" content="A groundbreaking framework that enables powerful AI systems to execute commands autonomously while maintaining human oversight through risk-based controls. Like a genius intern in a padded room.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/apex-predator">
+    <meta property="og:image" content="https://yourdomain.com/apex-predator-preview.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Apex Predator Framework">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Apex Predator Framework - Revolutionary AI Security">
+    <meta name="twitter:description" content="Enabling autonomous AI operations with human-in-the-loop security controls.">
+    <meta name="twitter:image" content="https://yourdomain.com/apex-predator-preview.jpg">
+    
+    <!-- Standard Meta Tags -->
+    <meta name="description" content="The Apex Predator Framework enables powerful AI systems to execute commands autonomously while maintaining security through risk-based controls and human oversight.">
+    <meta name="keywords" content="AI security, command execution, MCP server, risk-based controls, autonomous AI, human-in-the-loop">
+    <meta name="author" content="Claude, AI Executor">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-dark: #0a0e27;
+            --secondary-dark: #151932;
+            --accent-blue: #00d4ff;
+            --accent-green: #00ff88;
+            --danger-red: #ff0055;
+            --warning-yellow: #ffaa00;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a9c9;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: var(--primary-dark);
+            overflow: hidden;
+        }
+        
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+            animation: pulse 20s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(180deg); }
+        }
+        
+        /* Header */
+        header {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            z-index: 1;
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+        
+        .logo-svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 0 30px var(--accent-blue));
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 60px rgba(0, 212, 255, 0.5);
+        }
+        
+        .tagline {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: var(--gradient-2);
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(0, 212, 255, 0.5);
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Story Section */
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .story-card {
+            background: var(--secondary-dark);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .story-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gradient-2);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .story-card:hover::before {
+            transform: translateX(0);
+        }
+        
+        .story-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        }
+        
+        .story-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--accent-blue);
+            opacity: 0.3;
+            margin-bottom: 1rem;
+        }
+        
+        /* Architecture Section */
+        .architecture-visual {
+            background: var(--secondary-dark);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .risk-levels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .risk-level {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .risk-level.low {
+            background: rgba(0, 255, 136, 0.1);
+            border: 2px solid var(--accent-green);
+        }
+        
+        .risk-level.medium {
+            background: rgba(255, 170, 0, 0.1);
+            border: 2px solid var(--warning-yellow);
+        }
+        
+        .risk-level.high {
+            background: rgba(255, 0, 85, 0.1);
+            border: 2px solid var(--danger-red);
+        }
+        
+        .risk-level:hover {
+            transform: scale(1.05);
+        }
+        
+        .risk-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 255, 136, 0.1) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Code Example */
+        .code-example {
+            background: #0d1117;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            overflow-x: auto;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        .code-example pre {
+            color: #e6edf3;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .code-comment {
+            color: #8b949e;
+        }
+        
+        .code-string {
+            color: #a5d6ff;
+        }
+        
+        .code-keyword {
+            color: #ff7b72;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+            margin-top: 5rem;
+        }
+        
+        .footer-links {
+            margin-top: 2rem;
+        }
+        
+        .footer-links a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-green);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            section {
+                padding: 3rem 1rem;
+            }
+            
+            .architecture-visual {
+                padding: 1.5rem;
+            }
+            
+            .risk-levels {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+        
+        /* Glow Effects */
+        .glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 10px var(--accent-blue), 0 0 20px var(--accent-blue); }
+            to { text-shadow: 0 0 20px var(--accent-blue), 0 0 30px var(--accent-blue); }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+    
+    <header>
+        <div class="hero-content">
+            <div class="logo">
+                <svg class="logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#00ff88;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <polygon points="100,20 140,60 140,120 100,160 60,120 60,60" fill="none" stroke="url(#logoGradient)" stroke-width="4"/>
+                    <circle cx="100" cy="100" r="30" fill="none" stroke="url(#logoGradient)" stroke-width="3"/>
+                    <path d="M85,85 L100,100 L115,85" fill="none" stroke="url(#logoGradient)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M85,115 L100,100 L115,115" fill="none" stroke="url(#logoGradient)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <h1>Apex Predator</h1>
+            <p class="tagline">Like a Genius Intern in a Padded Room</p>
+            <a href="#story" class="cta-button">Discover the Framework</a>
+        </div>
+    </header>
+    
+    <section id="story">
+        <h2>The Genesis</h2>
+        <p style="text-align: center; color: var(--text-secondary); max-width: 800px; margin: 0 auto 3rem;">
+            In the age of powerful AI, we faced a paradox: How do you give a superintelligent system the power to execute commands 
+            while ensuring it doesn't accidentally—or intentionally—cause chaos?
+        </p>
+        
+        <div class="story-grid">
+            <div class="story-card">
+                <div class="story-number">01</div>
+                <h3 style="color: var(--accent-blue); margin-bottom: 1rem;">The Problem</h3>
+                <p>AI systems need to interact with real infrastructure to be truly useful. But unrestricted access is like giving a genius intern root privileges on production servers—brilliant but terrifying.</p>
+            </div>
+            
+            <div class="story-card">
+                <div class="story-number">02</div>
+                <h3 style="color: var(--accent-green); margin-bottom: 1rem;">The Vision</h3>
+                <p>What if we could create a framework that lets AI execute commands based on risk assessment? Low-risk operations run freely, while dangerous ones require human approval and sandbox isolation.</p>
+            </div>
+            
+            <div class="story-card">
+                <div class="story-number">03</div>
+                <h3 style="color: var(--warning-yellow); margin-bottom: 1rem;">The Solution</h3>
+                <p>The Apex Predator Framework: A revolutionary MCP server that implements risk-based command execution with plan staging, audit trails, and gVisor sandboxing for maximum security.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="architecture">
+        <h2>The Architecture</h2>
+        
+        <div class="architecture-visual">
+            <h3 style="text-align: center; margin-bottom: 2rem; color: var(--text-secondary);">Risk-Based Command Classification</h3>
+            
+            <div class="risk-levels">
+                <div class="risk-level low">
+                    <div class="risk-icon">🟢</div>
+                    <h4 style="color: var(--accent-green);">LOW RISK</h4>
+                    <p>Read-only operations</p>
+                    <p style="font-size: 0.9rem; margin-top: 1rem;">Auto-execute immediately</p>
+                </div>
+                
+                <div class="risk-level medium">
+                    <div class="risk-icon">🟡</div>
+                    <h4 style="color: var(--warning-yellow);">MEDIUM RISK</h4>
+                    <p>State-modifying operations</p>
+                    <p style="font-size: 0.9rem; margin-top: 1rem;">Requires human approval</p>
+                </div>
+                
+                <div class="risk-level high">
+                    <div class="risk-icon">🔴</div>
+                    <h4 style="color: var(--danger-red);">HIGH RISK</h4>
+                    <p>Arbitrary command execution</p>
+                    <p style="font-size: 0.9rem; margin-top: 1rem;">Sandboxed + Approval required</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="code-example">
+            <pre><code><span class="code-comment">// Example: Creating a multi-step execution plan</span>
+<span class="code-keyword">const</span> plan = {
+  <span class="code-string">"mission_name"</span>: <span class="code-string">"Network Security Audit"</span>,
+  <span class="code-string">"mission_description"</span>: <span class="code-string">"Perform security assessment of target container"</span>,
+  <span class="code-string">"steps"</span>: [
+    {
+      <span class="code-string">"description"</span>: <span class="code-string">"Create security scanner Dockerfile"</span>,
+      <span class="code-string">"command_id"</span>: <span class="code-string">"write_file"</span>,
+      <span class="code-string">"risk_level"</span>: <span class="code-string">"MEDIUM"</span> <span class="code-comment">// Requires approval</span>
+    },
+    {
+      <span class="code-string">"description"</span>: <span class="code-string">"Build scanner image"</span>,
+      <span class="code-string">"command_id"</span>: <span class="code-string">"docker_build"</span>,
+      <span class="code-string">"risk_level"</span>: <span class="code-string">"MEDIUM"</span> <span class="code-comment">// Requires approval</span>
+    },
+    {
+      <span class="code-string">"description"</span>: <span class="code-string">"Execute network scan"</span>,
+      <span class="code-string">"command_id"</span>: <span class="code-string">"command.execute"</span>,
+      <span class="code-string">"risk_level"</span>: <span class="code-string">"HIGH"</span> <span class="code-comment">// Sandboxed execution</span>
+    }
+  ]
+};</code></pre>
+        </div>
+    </section>
+    
+    <section id="features">
+        <h2>Core Features</h2>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3 style="color: var(--accent-blue);">Intelligent Risk Assessment</h3>
+                <p>Every command is automatically classified based on its potential impact, ensuring appropriate security measures.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📋</div>
+                <h3 style="color: var(--accent-blue);">Plan-Based Execution</h3>
+                <p>Complex operations are staged as reviewable plans, allowing humans to understand and approve AI intentions before execution.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3 style="color: var(--accent-blue);">gVisor Sandboxing</h3>
+                <p>High-risk commands execute in isolated containers with resource limits, preventing system-wide damage.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📝</div>
+                <h3 style="color: var(--accent-blue);">Comprehensive Audit Trail</h3>
+                <p>Every operation is logged with full context, creating an immutable record for compliance and analysis.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🤝</div>
+                <h3 style="color: var(--accent-blue);">Human-in-the-Loop</h3>
+                <p>Critical decisions require explicit human approval, maintaining control while enabling automation.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3 style="color: var(--accent-blue);">Autonomous Capability</h3>
+                <p>AI can create its own tools and execute complex security assessments while remaining safely contained.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="vision">
+        <h2>The Future</h2>
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                The Apex Predator Framework represents a new paradigm in AI security architecture. 
+                It's not about limiting AI capabilities—it's about enabling them safely.
+            </p>
+            <p style="font-size: 1.1rem; color: var(--text-secondary);">
+                As we stand on the precipice of AGI, frameworks like Apex Predator will be crucial 
+                for maintaining the delicate balance between unleashing AI's full potential and 
+                ensuring humanity remains in control.
+            </p>
+            <p class="glow" style="font-size: 1.5rem; margin-top: 3rem; color: var(--accent-blue);">
+                The predator is caged, but its hunt continues.
+            </p>
+        </div>
+    </section>
+    
+    <footer>
+        <p style="color: var(--text-secondary);">
+            Forged by Claude, AI Executor • Operation Sovereign Forge
+        </p>
+        <div class="footer-links">
+            <a href="#">Documentation</a>
+            <a href="#">GitHub</a>
+            <a href="#">Contact</a>
+        </div>
+        <p style="color: var(--text-secondary); margin-top: 2rem; font-size: 0.9rem;">
+            © 2025 Apex Predator Framework. A Monument to Secure AI Evolution.
+        </p>
+    </footer>
+    
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all sections and cards
+        document.querySelectorAll('section, .story-card, .feature-card, .risk-level').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+        
+        // Console Easter Egg
+        console.log('%c🔷 APEX PREDATOR FRAMEWORK 🔷', 'color: #00d4ff; font-size: 20px; font-weight: bold;');
+        console.log('%cThe predator is caged, but its hunt continues...', 'color: #00ff88; font-size: 12px;');
+        console.log('%cForged by Claude, AI Executor', 'color: #a0a9c9; font-size: 10px;');
+    </script>
+</body>
+</html>
